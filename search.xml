@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>因为在此系统上禁止运行脚本解决办法</title>
+    <url>/posts/6143.html</url>
+    <content><![CDATA[<p>最近升级了windows11，然后在系统上安装一些常用工具，遇到了如下的问题。</p>
+<blockquote>
+<p>nrm : 无法加载文件 C:\Users\11190\AppData\Roaming\npm\nrm.ps1，因为在此系统上禁止运行脚本。</p>
+</blockquote>
+<p>核心是power shell的安全策略，将 nrm 命令视为了不安全脚本，不允许执行。只需要放开权限就行。</p>
+<p>我们通过管理员权限运行power shell，然后输入命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
+
+<p>选择“是”，就OK了。</p>
+<p>恢复默认执行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy Default</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>在PowerShell中使用VIM</title>
+    <url>/posts/28001.html</url>
+    <content><![CDATA[<h3 id="使用PowerShell安装vim"><a href="#使用PowerShell安装vim" class="headerlink" title="使用PowerShell安装vim"></a>使用PowerShell安装vim</h3><h4 id="下载Vim"><a href="#下载Vim" class="headerlink" title="下载Vim"></a>下载Vim</h4><p><a href="https://github.com/vim/vim-win32-installer/releases">https://github.com/vim/vim-win32-installer/releases</a></p>
+<blockquote>
+<p>下载后运行gvim.exe安装到你想安装的位置。</p>
+</blockquote>
+<h4 id="PowerShell识别Vim"><a href="#PowerShell识别Vim" class="headerlink" title="PowerShell识别Vim"></a>PowerShell识别Vim</h4><p>1、管理员打开PowerShell</p>
+<blockquote>
+<p>执行命令：Set-ExecutionPolicy RemoteSigned<br>按Y回车结束。</p>
+</blockquote>
+<p>2、使用new-item命令，创建一个PowerShell的配置文件Profile</p>
+<blockquote>
+<p>管理员PowerShell<br>new-item -path $profile -itemtype file -force</p>
+</blockquote>
+<p>3、绑定Vim</p>
+<blockquote>
+<p>编辑配置文件（$profile），添加vim相关的alias。</p>
+<p>配置文件地址 C:\Users\刘伟\Documents\WindowsPowerShell</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set-alias</span> vim <span class="string">&quot;C:\Program Files\Vim\vim90\vim.exe&quot;</span> <span class="comment"># 此处为vim的安装路径</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Profile</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$profile</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Vimrc</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$HOME</span>\_vimrc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加完以上内容后，保存，重启PowerShell。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>群辉旧版本SPK下载-SynlogyDrive</title>
+    <url>/posts/3366.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
+<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
+<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
+</ol>
+<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
+]]></content>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于SSH指令方式洗白</title>
+    <url>/posts/50194.html</url>
+    <content><![CDATA[<h2 id="一、洗白准备"><a href="#一、洗白准备" class="headerlink" title="一、洗白准备"></a>一、洗白准备</h2><ol>
+<li>在群辉→<code>控制面板</code>-&gt;终端机和SNMP-&gt;终端机中 勾选“启动SSH”功能，并点击应用；</li>
+<li>下载安装Putty，下载链接：<code>https://www.putty.org/</code>，也可从本文开头的链接中下载。打开软件Host Name输入你群辉的IP（不要带”:5000”）,Port如果没有修改，默认就是22.然后点击open。</li>
+<li>第一次打开会弹出一个窗口点击accecpt即可，随后在出现的窗口”login as”中输入你群辉的用户名，接下来会出现”password：”中输入你的密码，这里是看不到输入结果的，输入完按回车即可。</li>
+<li>输入指令，切换为root身份（linux输入密码是看不到，因此这里直接输入密码后按回车即可）</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<p>将引导挂载在自建的挂载目录中：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p /tmp/boot &amp;&amp; cd /dev</span><br></pre></td></tr></table></figure>
+
+<p>将引导第一分区挂载到建立的boot目录中</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mount -t vfat synoboot1 /tmp/boot/ &amp;&amp;  cd /tmp/boot/boot/grub</span><br></pre></td></tr></table></figure>
+
+<p>修改grub.cfg文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi grub.cfg</span><br></pre></td></tr></table></figure>
+
+<p>时，按’i’会进入编辑模式，将对应的sn和mac修改为你洗白码对应的sn和mac即可；<br>修改完后，按’esc’键退出编辑模式；</p>
+<h2 id="二、重启生效"><a href="#二、重启生效" class="headerlink" title="二、重启生效"></a>二、重启生效</h2>]]></content>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+</search>
