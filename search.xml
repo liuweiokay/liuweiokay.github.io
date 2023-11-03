@@ -43,6 +43,26 @@
 ]]></content>
   </entry>
   <entry>
+    <title>群辉旧版本SPK下载-SynlogyDrive</title>
+    <url>/posts/3366.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
+<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
+<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
+</ol>
+<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
+]]></content>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于SSH指令方式洗白</title>
     <url>/posts/50194.html</url>
     <content><![CDATA[<h2 id="一、洗白准备"><a href="#一、洗白准备" class="headerlink" title="一、洗白准备"></a>一、洗白准备</h2><ol>
@@ -64,26 +84,6 @@
 
 <p>时，按’i’会进入编辑模式，将对应的sn和mac修改为你洗白码对应的sn和mac即可；<br>修改完后，按’esc’键退出编辑模式；</p>
 <h2 id="二、重启生效"><a href="#二、重启生效" class="headerlink" title="二、重启生效"></a>二、重启生效</h2>]]></content>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>群辉旧版本SPK下载-SynlogyDrive</title>
-    <url>/posts/3366.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
-<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
-<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
-</ol>
-<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
-]]></content>
       <tags>
         <tag>synology</tag>
       </tags>
