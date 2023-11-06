@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>因为在此系统上禁止运行脚本解决办法</title>
+    <title>Active Backup for Business 套件激活方法</title>
+    <url>/posts/14792.html</url>
+    <content><![CDATA[<h1 id="Active-Backup-for-Business-套件激活方法"><a href="#Active-Backup-for-Business-套件激活方法" class="headerlink" title="Active Backup for Business 套件激活方法"></a>Active Backup for Business 套件激活方法</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>黑群晖在不登录的情况下无法激活<code>Active backup for Business</code> 等套件，需要使用<strong>火狐浏览器</strong>进行浏览器激活</p>
+<h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a>修改步骤</h2><p>需要修改文中的<code>ip地址</code>为自己群辉的登录地址，<code>serial_number</code>为自己的SN号</p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310221517381.png" alt="image-20231022151743344"></p>
+<p><strong>ABB for Active backup for Business：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.API.Auth&amp;version=3&amp;method=login&amp;account=admin&amp;passwd=password&amp;format=cookie</span><br><span class="line"></span><br><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.ActiveBackup.Activation&amp;method=set&amp;version=1&amp;activated=true&amp;serial_number=179GPDN224200</span><br><span class="line"></span><br><span class="line"># 查看激活状态</span><br><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackup.Activation&amp;method=get&amp;version=1</span><br></pre></td></tr></table></figure>
+
+<p><strong>ABB for Microsoft 365：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupOffice365&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
+
+<p><strong>ABB for Google Workspace：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupGSuite&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>黑群晖</category>
+      </categories>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客中tags与categories用法</title>
+    <url>/posts/30600.html</url>
+    <content><![CDATA[<h3 id="tags与categories"><a href="#tags与categories" class="headerlink" title="tags与categories"></a>tags与categories</h3><p>在hexo中使用tags与categories往往需要使用多标签和多分类,这里记录一下它们的用法。</p>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>用法：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure>
+
+<p>多标签写法，这2种都是一样的效果，用哪个都可以，建议使用列表[]式，直观清晰。</p>
+<h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PowerShell“因为在此系统上禁止运行脚本解决办法”</title>
     <url>/posts/6143.html</url>
     <content><![CDATA[<p>最近升级了windows11，然后在系统上安装一些常用工具，遇到了如下的问题。</p>
 <blockquote>
@@ -16,6 +55,12 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy Default</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>解决方案</category>
+      </categories>
+      <tags>
+        <tag>PowerShell</tag>
+      </tags>
   </entry>
   <entry>
     <title>在PowerShell中使用VIM</title>
@@ -41,26 +86,26 @@
 
 <p>添加完以上内容后，保存，重启PowerShell。</p>
 ]]></content>
+      <categories>
+        <category>解决方案</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
   </entry>
   <entry>
-    <title>群辉旧版本SPK下载-SynlogyDrive</title>
-    <url>/posts/3366.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
-<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
-<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
+    <title>从任务栏中删除 Windows Copilot 图标</title>
+    <url>/posts/51963.html</url>
+    <content><![CDATA[<p>如果你对 Windows Copilot 感到满意，但又不想让任务栏显示该图标并占用空间，那么可以按照以下步骤将其从任务栏中移除：</p>
+<ol>
+<li><p>打开 Windows 设置，导航至 <strong>个性化</strong> &gt; <strong>任务栏(taskbar)</strong></p>
+</li>
+<li><p>找到任务栏项目下的 Copilot（预览）选项，点击旁边的切换按钮隐藏图标</p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/image-20231106091026448.png" alt="image-20231106091026448"></p>
+</li>
 </ol>
-<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
+<p>请注意，这只会隐藏任务栏上的 Copilot 图标，您仍然可以按 WIN+C 快捷键启动它。</p>
 ]]></content>
-      <tags>
-        <tag>synology</tag>
-      </tags>
   </entry>
   <entry>
     <title>基于SSH指令方式洗白</title>
@@ -84,6 +129,66 @@
 
 <p>时，按’i’会进入编辑模式，将对应的sn和mac修改为你洗白码对应的sn和mac即可；<br>修改完后，按’esc’键退出编辑模式；</p>
 <h2 id="二、重启生效"><a href="#二、重启生效" class="headerlink" title="二、重启生效"></a>二、重启生效</h2>]]></content>
+      <categories>
+        <category>黑群晖</category>
+      </categories>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hxeo tages categores 页面空白的方法</title>
+    <url>/posts/18430.html</url>
+    <content><![CDATA[<p>解决hexo categories和tags页面不显示解决办法<br>第一步 需要新建tags和categories页面<br>在终端powershell下，确保此时是在hexo目录下，命令行输入</p>
+<p><code>hexo new page tags</code> &#x2F;&#x2F;新建tags页面<br>然后会在hexo下的source目录看到tags文件夹，在index.md里输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-10 16:14:33</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;   #增加tags的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>然后再用同样的方法，新建一个<code>categories</code></p>
+<p><code>hexo new page categories</code> &#x2F;&#x2F;新建categories页面<br>然后配置categories 文件夹下的index.md</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-10 16:15:43</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;    #增加categories的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h4 id="第二步-给自己的帖子新加配置-增加tags和categories"><a href="#第二步-给自己的帖子新加配置-增加tags和categories" class="headerlink" title="第二步 给自己的帖子新加配置,增加tags和categories"></a>第二步 给自己的帖子新加配置,增加tags和categories</h4><p>例如我自己的一篇博客</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo categories和tags页面不显示解决办法</span><br><span class="line">date: 2020-01-12 17:22:40</span><br><span class="line">tags: 前端</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>群辉旧版本SPK下载-SynlogyDrive</title>
+    <url>/posts/3366.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
+<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
+<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
+</ol>
+<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
+
+<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
+]]></content>
+      <categories>
+        <category>黑群晖</category>
+      </categories>
+      <tags>
+        <tag>synology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖开启root权限并设置root密码</title>
+    <url>/posts/13295.html</url>
+    <content><![CDATA[<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p>DSM版本: DSM 6.2.3-25423</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="一、打开设备SSH访问"><a href="#一、打开设备SSH访问" class="headerlink" title="一、打开设备SSH访问"></a>一、打开设备SSH访问</h3><p><code>控制面板</code> &gt; <code>终端机和SNMP</code> &gt; <code>启动SSH功能</code></p>
+<h3 id="二、利用SSH软件连接到设备"><a href="#二、利用SSH软件连接到设备" class="headerlink" title="二、利用SSH软件连接到设备"></a>二、利用SSH软件连接到设备</h3><h3 id="三、设置root用户账号以及密码"><a href="#三、设置root用户账号以及密码" class="headerlink" title="三、设置root用户账号以及密码"></a>三、设置root用户账号以及密码</h3><ol>
+<li>通过输入 `sudo -i`，然后输入当前用户密码, 进入 root用户</li>
+<li>输入如下命令可以修改root 用户的密码,123456为root用户密码</li>
+</ol>
+<p><code>synouser --setpw root 123456</code>    </p>
+<h3 id="四、DSM版本大于6-2，还需要设置"><a href="#四、DSM版本大于6-2，还需要设置" class="headerlink" title="四、DSM版本大于6.2，还需要设置"></a>四、DSM版本大于6.2，还需要设置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>找到这一行<br><code>#PermitRootLogin prohibit-password</code><br>并修改为<br><code>PermitRootLogin yes</code><br>按<code>i</code>键，进入编辑模式；按<code>Esc</code>键退出编辑模式；然后输入<code>:wq</code>保存退出；输入<code>:q!</code>放弃保存。</p>
+]]></content>
+      <categories>
+        <category>黑群晖</category>
+      </categories>
       <tags>
         <tag>synology</tag>
       </tags>
