@@ -1,45 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Active Backup for Business 套件激活方法</title>
-    <url>/posts/14792.html</url>
-    <content><![CDATA[<h1 id="Active-Backup-for-Business-套件激活方法"><a href="#Active-Backup-for-Business-套件激活方法" class="headerlink" title="Active Backup for Business 套件激活方法"></a>Active Backup for Business 套件激活方法</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>黑群晖在不登录的情况下无法激活<code>Active backup for Business</code> 等套件，需要使用<strong>火狐浏览器</strong>进行浏览器激活</p>
-<h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a>修改步骤</h2><p>需要修改文中的<code>ip地址</code>为自己群辉的登录地址，<code>serial_number</code>为自己的SN号</p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310221517381.png" alt="image-20231022151743344"></p>
-<p><strong>ABB for Active backup for Business：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.API.Auth&amp;version=3&amp;method=login&amp;account=admin&amp;passwd=password&amp;format=cookie</span><br><span class="line"></span><br><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.ActiveBackup.Activation&amp;method=set&amp;version=1&amp;activated=true&amp;serial_number=179GPDN224200</span><br><span class="line"></span><br><span class="line"># 查看激活状态</span><br><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackup.Activation&amp;method=get&amp;version=1</span><br></pre></td></tr></table></figure>
-
-<p><strong>ABB for Microsoft 365：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupOffice365&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
-
-<p><strong>ABB for Google Workspace：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupGSuite&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>黑群晖</category>
-      </categories>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 22.04 系统关闭图形界面的方法</title>
-    <url>/posts/34716.html</url>
-    <content><![CDATA[<h2 id="关闭图形界面"><a href="#关闭图形界面" class="headerlink" title="关闭图形界面"></a>关闭图形界面</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>重启机器<code>reboot</code></p>
-<h2 id="重新启用图形界面的方法"><a href="#重新启用图形界面的方法" class="headerlink" title="重新启用图形界面的方法"></a>重新启用图形界面的方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl set-default graphical.target</span><br></pre></td></tr></table></figure>
-
-<p>重启机器<code>reboot</code></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PowerShell“因为在此系统上禁止运行脚本解决办法”</title>
     <url>/posts/6143.html</url>
     <content><![CDATA[<p>最近升级了windows11，然后在系统上安装一些常用工具，遇到了如下的问题。</p>
@@ -60,6 +21,28 @@
       </categories>
       <tags>
         <tag>PowerShell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Active Backup for Business 套件激活方法</title>
+    <url>/posts/14792.html</url>
+    <content><![CDATA[<h1 id="Active-Backup-for-Business-套件激活方法"><a href="#Active-Backup-for-Business-套件激活方法" class="headerlink" title="Active Backup for Business 套件激活方法"></a>Active Backup for Business 套件激活方法</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>黑群晖在不登录的情况下无法激活<code>Active backup for Business</code> 等套件，需要使用<strong>火狐浏览器</strong>进行浏览器激活</p>
+<h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a>修改步骤</h2><p>需要修改文中的<code>ip地址</code>为自己群辉的登录地址，<code>serial_number</code>为自己的SN号</p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310221517381.png" alt="image-20231022151743344"></p>
+<p><strong>ABB for Active backup for Business：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.API.Auth&amp;version=3&amp;method=login&amp;account=admin&amp;passwd=password&amp;format=cookie</span><br><span class="line"></span><br><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.ActiveBackup.Activation&amp;method=set&amp;version=1&amp;activated=true&amp;serial_number=179GPDN224200</span><br><span class="line"></span><br><span class="line"># 查看激活状态</span><br><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackup.Activation&amp;method=get&amp;version=1</span><br></pre></td></tr></table></figure>
+
+<p><strong>ABB for Microsoft 365：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupOffice365&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
+
+<p><strong>ABB for Google Workspace：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupGSuite&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>黑群晖</category>
+      </categories>
+      <tags>
+        <tag>synology</tag>
       </tags>
   </entry>
   <entry>
@@ -84,23 +67,6 @@
       </categories>
       <tags>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo博客中tags与categories用法</title>
-    <url>/posts/30600.html</url>
-    <content><![CDATA[<h3 id="tags与categories"><a href="#tags与categories" class="headerlink" title="tags与categories"></a>tags与categories</h3><p>在hexo中使用tags与categories往往需要使用多标签和多分类,这里记录一下它们的用法。</p>
-<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>用法：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure>
-
-<p>多标签写法，这2种都是一样的效果，用哪个都可以，建议使用列表[]式，直观清晰。</p>
-<h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -148,6 +114,23 @@
       </categories>
       <tags>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客中tags与categories用法</title>
+    <url>/posts/30600.html</url>
+    <content><![CDATA[<h3 id="tags与categories"><a href="#tags与categories" class="headerlink" title="tags与categories"></a>tags与categories</h3><p>在hexo中使用tags与categories往往需要使用多标签和多分类,这里记录一下它们的用法。</p>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>用法：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure>
+
+<p>多标签写法，这2种都是一样的效果，用哪个都可以，建议使用列表[]式，直观清晰。</p>
+<h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -199,6 +182,21 @@
       </tags>
   </entry>
   <entry>
+    <title>删除低版本Node安装新版本node报错的解决方法</title>
+    <url>/posts/10979.html</url>
+    <content><![CDATA[<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Unpacking nodejs (20.5.1-deb-1nodesource1) ...</span><br><span class="line">dpkg: error processing archive /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.deb (--unpack):</span><br><span class="line"> trying to overwrite &#x27;/usr/include/node/common.gypi&#x27;, which is also in package libnode-dev 12.22.9~dfsg-1ubuntu3.1</span><br><span class="line">dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.debE: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode-dev</span><br><span class="line"></span><br><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode72:amd64</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在PowerShell中使用VIM</title>
     <url>/posts/28001.html</url>
     <content><![CDATA[<h3 id="使用PowerShell安装vim"><a href="#使用PowerShell安装vim" class="headerlink" title="使用PowerShell安装vim"></a>使用PowerShell安装vim</h3><h4 id="下载Vim"><a href="#下载Vim" class="headerlink" title="下载Vim"></a>下载Vim</h4><p><a href="https://github.com/vim/vim-win32-installer/releases">https://github.com/vim/vim-win32-installer/releases</a></p>
@@ -227,6 +225,25 @@
       </categories>
       <tags>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查看运行的VPS运行什么操作系统</title>
+    <url>/posts/55.html</url>
+    <content><![CDATA[<h1 id="查看系统架构信息"><a href="#查看系统架构信息" class="headerlink" title="查看系统架构信息"></a>查看系统架构信息</h1><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230950367.png"></p>
+<h1 id="查看系统是-ubuntu-还是-CentOS"><a href="#查看系统是-ubuntu-还是-CentOS" class="headerlink" title="查看系统是 ubuntu 还是 CentOS"></a>查看系统是 ubuntu 还是 CentOS</h1><p>cat &#x2F;etc&#x2F;redhat-release</p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230952633.png"></p>
+<p>cat &#x2F;etc&#x2F;issue</p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230953627.png"></p>
+<p>以上显示系统为<code>CentOS</code></p>
+<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230955983.png"></p>
+<p>以上显示系统为<code>Ubuntu</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
       </tags>
   </entry>
   <entry>
@@ -259,44 +276,6 @@
       </tags>
   </entry>
   <entry>
-    <title>查看运行的VPS运行什么操作系统</title>
-    <url>/posts/55.html</url>
-    <content><![CDATA[<h1 id="查看系统架构信息"><a href="#查看系统架构信息" class="headerlink" title="查看系统架构信息"></a>查看系统架构信息</h1><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230950367.png"></p>
-<h1 id="查看系统是-ubuntu-还是-CentOS"><a href="#查看系统是-ubuntu-还是-CentOS" class="headerlink" title="查看系统是 ubuntu 还是 CentOS"></a>查看系统是 ubuntu 还是 CentOS</h1><ul>
-<li><p>cat &#x2F;etc&#x2F;redhat-release</p>
-<p>  <img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230952633.png"></p>
-</li>
-<li><p>cat &#x2F;etc&#x2F;issue</p>
-<p>  <img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230953627.png"></p>
-<p>  以上显示系统为<code>CentOS</code></p>
-<p>  <img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230955983.png"></p>
-<p>  以上显示系统为<code>Ubuntu</code></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除低版本Node安装新版本node报错的解决方法</title>
-    <url>/posts/10979.html</url>
-    <content><![CDATA[<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Unpacking nodejs (20.5.1-deb-1nodesource1) ...</span><br><span class="line">dpkg: error processing archive /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.deb (--unpack):</span><br><span class="line"> trying to overwrite &#x27;/usr/include/node/common.gypi&#x27;, which is also in package libnode-dev 12.22.9~dfsg-1ubuntu3.1</span><br><span class="line">dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.debE: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode-dev</span><br><span class="line"></span><br><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode72:amd64</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>群辉旧版本SPK下载-SynlogyDrive</title>
     <url>/posts/3366.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
@@ -320,6 +299,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu 22.04 系统关闭图形界面的方法</title>
+    <url>/posts/34716.html</url>
+    <content><![CDATA[<h2 id="关闭图形界面"><a href="#关闭图形界面" class="headerlink" title="关闭图形界面"></a>关闭图形界面</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>重启机器<code>reboot</code></p>
+<h2 id="重新启用图形界面的方法"><a href="#重新启用图形界面的方法" class="headerlink" title="重新启用图形界面的方法"></a>重新启用图形界面的方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl set-default graphical.target</span><br></pre></td></tr></table></figure>
+
+<p>重启机器<code>reboot</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hxeo tages categores 页面空白的方法</title>
+    <url>/posts/18430.html</url>
+    <content><![CDATA[<p>解决hexo categories和tags页面不显示解决办法<br>第一步 需要新建tags和categories页面<br>在终端powershell下，确保此时是在hexo目录下，命令行输入</p>
+<p><code>hexo new page tags</code> &#x2F;&#x2F;新建tags页面<br>然后会在hexo下的source目录看到tags文件夹，在index.md里输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-10 16:14:33</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;   #增加tags的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>然后再用同样的方法，新建一个<code>categories</code></p>
+<p><code>hexo new page categories</code> &#x2F;&#x2F;新建categories页面<br>然后配置categories 文件夹下的index.md</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-10 16:15:43</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;    #增加categories的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h4 id="第二步-给自己的帖子新加配置-增加tags和categories"><a href="#第二步-给自己的帖子新加配置-增加tags和categories" class="headerlink" title="第二步 给自己的帖子新加配置,增加tags和categories"></a>第二步 给自己的帖子新加配置,增加tags和categories</h4><p>例如我自己的一篇博客</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo categories和tags页面不显示解决办法</span><br><span class="line">date: 2020-01-12 17:22:40</span><br><span class="line">tags: 前端</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>黑群晖开启root权限并设置root密码</title>
     <url>/posts/13295.html</url>
     <content><![CDATA[<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p>DSM版本: DSM 6.2.3-25423</p>
@@ -339,18 +348,5 @@
       <tags>
         <tag>synology</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>解决hxeo tages categores 页面空白的方法</title>
-    <url>/posts/18430.html</url>
-    <content><![CDATA[<p>解决hexo categories和tags页面不显示解决办法<br>第一步 需要新建tags和categories页面<br>在终端powershell下，确保此时是在hexo目录下，命令行输入</p>
-<p><code>hexo new page tags</code> &#x2F;&#x2F;新建tags页面<br>然后会在hexo下的source目录看到tags文件夹，在index.md里输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-10 16:14:33</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;   #增加tags的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>然后再用同样的方法，新建一个<code>categories</code></p>
-<p><code>hexo new page categories</code> &#x2F;&#x2F;新建categories页面<br>然后配置categories 文件夹下的index.md</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-10 16:15:43</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;    #增加categories的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="第二步-给自己的帖子新加配置-增加tags和categories"><a href="#第二步-给自己的帖子新加配置-增加tags和categories" class="headerlink" title="第二步 给自己的帖子新加配置,增加tags和categories"></a>第二步 给自己的帖子新加配置,增加tags和categories</h4><p>例如我自己的一篇博客</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo categories和tags页面不显示解决办法</span><br><span class="line">date: 2020-01-12 17:22:40</span><br><span class="line">tags: 前端</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
 </search>
