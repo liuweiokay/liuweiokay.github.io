@@ -1,352 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>PowerShell“因为在此系统上禁止运行脚本解决办法”</title>
-    <url>/posts/6143.html</url>
-    <content><![CDATA[<p>最近升级了windows11，然后在系统上安装一些常用工具，遇到了如下的问题。</p>
-<blockquote>
-<p>nrm : 无法加载文件 C:\Users\11190\AppData\Roaming\npm\nrm.ps1，因为在此系统上禁止运行脚本。</p>
-</blockquote>
-<p>核心是power shell的安全策略，将 nrm 命令视为了不安全脚本，不允许执行。只需要放开权限就行。</p>
-<p>我们通过管理员权限运行power shell，然后输入命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
-
-<p>选择“是”，就OK了。</p>
-<p>恢复默认执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy Default</span><br></pre></td></tr></table></figure>
-
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>查看运行的VPS运行什么操作系统</title>
+      <link href="/posts/55.html"/>
+      <url>/posts/55.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="查看系统架构信息"><a href="#查看系统架构信息" class="headerlink" title="查看系统架构信息"></a>查看系统架构信息</h1><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230950367.png"></p><h1 id="查看系统是-ubuntu-还是-CentOS"><a href="#查看系统是-ubuntu-还是-CentOS" class="headerlink" title="查看系统是 ubuntu 还是 CentOS"></a>查看系统是 ubuntu 还是 CentOS</h1><p>cat &#x2F;etc&#x2F;redhat-release</p><p>cat &#x2F;etc&#x2F;issue</p>]]></content>
+      
+      
       <categories>
-        <category>解决方案</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>PowerShell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Active Backup for Business 套件激活方法</title>
-    <url>/posts/14792.html</url>
-    <content><![CDATA[<h1 id="Active-Backup-for-Business-套件激活方法"><a href="#Active-Backup-for-Business-套件激活方法" class="headerlink" title="Active Backup for Business 套件激活方法"></a>Active Backup for Business 套件激活方法</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>黑群晖在不登录的情况下无法激活<code>Active backup for Business</code> 等套件，需要使用<strong>火狐浏览器</strong>进行浏览器激活</p>
-<h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a>修改步骤</h2><p>需要修改文中的<code>ip地址</code>为自己群辉的登录地址，<code>serial_number</code>为自己的SN号</p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310221517381.png" alt="image-20231022151743344"></p>
-<p><strong>ABB for Active backup for Business：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.API.Auth&amp;version=3&amp;method=login&amp;account=admin&amp;passwd=password&amp;format=cookie</span><br><span class="line"></span><br><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.ActiveBackup.Activation&amp;method=set&amp;version=1&amp;activated=true&amp;serial_number=179GPDN224200</span><br><span class="line"></span><br><span class="line"># 查看激活状态</span><br><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackup.Activation&amp;method=get&amp;version=1</span><br></pre></td></tr></table></figure>
-
-<p><strong>ABB for Microsoft 365：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupOffice365&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
-
-<p><strong>ABB for Google Workspace：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupGSuite&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>删除低版本Node安装新版本node报错的解决方法</title>
+      <link href="/posts/10979.html"/>
+      <url>/posts/10979.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Unpacking nodejs (20.5.1-deb-1nodesource1) ...</span><br><span class="line">dpkg: error processing archive /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.deb (--unpack):</span><br><span class="line"> trying to overwrite &#x27;/usr/include/node/common.gypi&#x27;, which is also in package libnode-dev 12.22.9~dfsg-1ubuntu3.1</span><br><span class="line">dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.debE: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode-dev</span><br><span class="line"></span><br><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode72:amd64</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>黑群晖</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 22.04上启用SSH服务</title>
-    <url>/posts/26853.html</url>
-    <content><![CDATA[<ol>
-<li><p>打开终端，输入以下命令安装SSH服务器：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装完成后，SSH服务将自动启动。您可以通过以下命令检查SSH服务的状态：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl status ssh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果SSH服务未启动，请使用以下命令手动启动它：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl start ssh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果您希望SSH服务在系统启动时自动启动，请使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable ssh</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ubuntu扩大增加swap</title>
+      <link href="/posts/55376.html"/>
+      <url>/posts/55376.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="SWAP分区介绍"><a href="#SWAP分区介绍" class="headerlink" title="SWAP分区介绍"></a>SWAP分区介绍</h3><p>在Linux系统中的SWAP（交换分区），类似于Windows系统的虚拟内存。系统会把一部分硬盘空间虚拟成内存使用，将系统内非活动内存换页到SWAP，以提高系统可用内存。</p><blockquote><p>注：如果您使用普通云盘，不建议使用SWAP分区。如果是高效云盘或SSD云盘，可以根据实际情况使用SWAP分区。</p></blockquote><h3 id="SWAP配置介绍"><a href="#SWAP配置介绍" class="headerlink" title="SWAP配置介绍"></a>SWAP配置介绍</h3><ol><li><p>以root用户身份，通过</p><p>远程连接</p><p>登录Linux实例，执行以下命令，创建用于交换分区的文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/mnt/swap bs=block_size count=number_of_block</span><br></pre></td></tr></table></figure><blockquote><p>注：<code>block_size</code>、<code>number_of_block</code>大小可以自定义，比如<code>bs=1M count=1024</code>代表设置1G大小SWAP分区。</p></blockquote></li><li><p>给swapfile一个执行权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 /swapfile</span><br></pre></td></tr></table></figure></li><li><p>执行以下命令，设置交换分区文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /mnt/swap</span><br></pre></td></tr></table></figure></li><li><p>执行以下命令，启用交换分区文件。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /mnt/swap</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 永久修改主机名 hostname</title>
-    <url>/posts/46419.html</url>
-    <content><![CDATA[<h3 id="1-查看主机名"><a href="#1-查看主机名" class="headerlink" title="1. 查看主机名"></a>1. 查看主机名</h3><p>在终端输入 <code>hostname</code> 即可查看主机名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wohu@wohu:/$ hostname</span><br><span class="line">wohu</span><br><span class="line">wohu@wohu:/$</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-修改主机名"><a href="#2-修改主机名" class="headerlink" title="2. 修改主机名"></a>2. 修改主机名</h3><h4 id="2-1-修改-etc-hostname"><a href="#2-1-修改-etc-hostname" class="headerlink" title="2.1 修改 &#x2F;etc&#x2F;hostname"></a>2.1 修改 &#x2F;etc&#x2F;hostname</h4><p><code>Ubuntu</code> 主机名存放在 <code>/etc/hostname</code> 文件中，修改主机名时，只需要编辑 <code>hostname</code>文件，在文件中输入新的主机名并保存该文件。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wohu@wohu:/$ vi /etc/hostname </span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：在其它 <code>Linux</code> 发行版中，并非都存在 <code>/etc/hostname</code> 文件。如 <code>Fedora</code> 发行版将主机名存放在 <code>/etc/sysconfig/network</code> 文件中。修改主机名时应注意区分是哪种 <code>Linux</code> 发行版。</strong></p>
-<h4 id="2-2-修改-etc-hosts"><a href="#2-2-修改-etc-hosts" class="headerlink" title="2.2 修改 &#x2F;etc&#x2F;hosts"></a>2.2 修改 &#x2F;etc&#x2F;hosts</h4><p><code>/etc/hosts</code> 存放的是域名与 <code>ip</code> 的对应关系，虽然这一步不是必须选项，但建议在修改主机名之后同步修改该文件。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wohu@wohu:/$ vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-3-重启系统"><a href="#2-3-重启系统" class="headerlink" title="2.3 重启系统"></a>2.3 重启系统</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wohu@wohu:/$ reboot</span><br></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu安装最新版本NodeJs和Npm的方法</title>
+      <link href="/posts/28671.html"/>
+      <url>/posts/28671.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一种方法-通过NodeSource提供的官方包安装-自带最新npm（最推荐）"><a href="#第一种方法-通过NodeSource提供的官方包安装-自带最新npm（最推荐）" class="headerlink" title="第一种方法 通过NodeSource提供的官方包安装 自带最新npm（最推荐）"></a>第一种方法 通过NodeSource提供的官方包安装 自带最新npm（最推荐）</h2><blockquote><p>以下是 <code>Nodejs 20.x</code>的安装，一行代码搞定<br><code>&amp;&amp;\</code> 的意思是前面的命令执行无误后，再执行后面代码</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure><blockquote><p>curl -fsSL <a href="https://deb.nodesource.com/setup_18.x">https://deb.nodesource.com/setup_18.x</a> | sudo -E bash - &amp;&amp;<br>sudo apt-get install -y nodejs</p></blockquote><h2 id="第二种-直接用apt安装，然后用n版本工具升级最新版"><a href="#第二种-直接用apt安装，然后用n版本工具升级最新版" class="headerlink" title="第二种 直接用apt安装，然后用n版本工具升级最新版"></a>第二种 直接用<code>apt</code>安装，然后用<code>n</code>版本工具升级最新版</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nodejs</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">不自带 npm 需要自行安装</span></span><br><span class="line">sudo apt install npm</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">升级 npm</span></span><br><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure><p>使用 <code>n</code> Node版本管理工具升级到 最新版</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载最新稳定版</span></span><br><span class="line">sudo n stable</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载最新版</span></span><br><span class="line">sudo n lastest</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看已下载的版本</span></span><br><span class="line">sudo n ls</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换 Node 版本</span></span><br><span class="line">sudo n 20.9.0</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu安装最新版本NodeJs和Npm的方法</title>
-    <url>/posts/28671.html</url>
-    <content><![CDATA[<h2 id="第一种方法-通过NodeSource提供的官方包安装-自带最新npm（最推荐）"><a href="#第一种方法-通过NodeSource提供的官方包安装-自带最新npm（最推荐）" class="headerlink" title="第一种方法 通过NodeSource提供的官方包安装 自带最新npm（最推荐）"></a>第一种方法 通过NodeSource提供的官方包安装 自带最新npm（最推荐）</h2><blockquote>
-<p>以下是 <code>Nodejs 20.x</code>的安装，一行代码搞定<br><code>&amp;&amp;\</code> 的意思是前面的命令执行无误后，再执行后面代码</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>curl -fsSL <a href="https://deb.nodesource.com/setup_18.x">https://deb.nodesource.com/setup_18.x</a> | sudo -E bash - &amp;&amp;<br>sudo apt-get install -y nodejs</p>
-</blockquote>
-<h2 id="第二种-直接用apt安装，然后用n版本工具升级最新版"><a href="#第二种-直接用apt安装，然后用n版本工具升级最新版" class="headerlink" title="第二种 直接用apt安装，然后用n版本工具升级最新版"></a>第二种 直接用<code>apt</code>安装，然后用<code>n</code>版本工具升级最新版</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt update	</span><br><span class="line">sudo apt install nodejs</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">不自带 npm 需要自行安装</span></span><br><span class="line">sudo apt install npm</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">升级 npm</span></span><br><span class="line">sudo npm install npm -g	</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>n</code> Node版本管理工具升级到 最新版</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install n -g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载最新稳定版</span></span><br><span class="line">sudo n stable</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载最新版</span></span><br><span class="line">sudo n lastest</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看已下载的版本</span></span><br><span class="line">sudo n ls</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换 Node 版本</span></span><br><span class="line">sudo n 20.9.0</span><br></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu 22.04上启用SSH服务</title>
+      <link href="/posts/26853.html"/>
+      <url>/posts/26853.html</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>打开终端，输入以下命令安装SSH服务器：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure></li><li><p>安装完成后，SSH服务将自动启动。您可以通过以下命令检查SSH服务的状态：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status ssh</span><br></pre></td></tr></table></figure></li><li><p>如果SSH服务未启动，请使用以下命令手动启动它：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start ssh</span><br></pre></td></tr></table></figure></li><li><p>如果您希望SSH服务在系统启动时自动启动，请使用以下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable ssh</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo博客中tags与categories用法</title>
-    <url>/posts/30600.html</url>
-    <content><![CDATA[<h3 id="tags与categories"><a href="#tags与categories" class="headerlink" title="tags与categories"></a>tags与categories</h3><p>在hexo中使用tags与categories往往需要使用多标签和多分类,这里记录一下它们的用法。</p>
-<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>用法：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure>
-
-<p>多标签写法，这2种都是一样的效果，用哪个都可以，建议使用列表[]式，直观清晰。</p>
-<h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu 22.04 系统关闭图形界面的方法</title>
+      <link href="/posts/34716.html"/>
+      <url>/posts/34716.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="关闭图形界面"><a href="#关闭图形界面" class="headerlink" title="关闭图形界面"></a>关闭图形界面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure><p>重启机器<code>reboot</code></p><h2 id="重新启用图形界面的方法"><a href="#重新启用图形界面的方法" class="headerlink" title="重新启用图形界面的方法"></a>重新启用图形界面的方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl set-default graphical.target</span><br></pre></td></tr></table></figure><p>重启机器<code>reboot</code></p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从任务栏中删除 Windows Copilot 图标</title>
-    <url>/posts/51963.html</url>
-    <content><![CDATA[<p>如果你对 Windows Copilot 感到满意，但又不想让任务栏显示该图标并占用空间，那么可以按照以下步骤将其从任务栏中移除：</p>
-<ol>
-<li><p>打开 Windows 设置，导航至 <strong>个性化</strong> &gt; <strong>任务栏(taskbar)</strong></p>
-</li>
-<li><p>找到任务栏项目下的 Copilot（预览）选项，点击旁边的切换按钮隐藏图标</p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/image-20231106091026448.png" alt="image-20231106091026448"></p>
-</li>
-</ol>
-<p>请注意，这只会隐藏任务栏上的 Copilot 图标，您仍然可以按 WIN+C 快捷键启动它。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>ubuntu扩大增加swap</title>
-    <url>/posts/55376.html</url>
-    <content><![CDATA[<h3 id="SWAP分区介绍"><a href="#SWAP分区介绍" class="headerlink" title="SWAP分区介绍"></a>SWAP分区介绍</h3><p>在Linux系统中的SWAP（交换分区），类似于Windows系统的虚拟内存。系统会把一部分硬盘空间虚拟成内存使用，将系统内非活动内存换页到SWAP，以提高系统可用内存。</p>
-<blockquote>
-<p>注：如果您使用普通云盘，不建议使用SWAP分区。如果是高效云盘或SSD云盘，可以根据实际情况使用SWAP分区。</p>
-</blockquote>
-<h3 id="SWAP配置介绍"><a href="#SWAP配置介绍" class="headerlink" title="SWAP配置介绍"></a>SWAP配置介绍</h3><ol>
-<li><p>以root用户身份，通过</p>
-<p>远程连接</p>
-<p>登录Linux实例，执行以下命令，创建用于交换分区的文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/mnt/swap bs=block_size count=number_of_block</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注：<code>block_size</code>、<code>number_of_block</code>大小可以自定义，比如<code>bs=1M count=1024</code>代表设置1G大小SWAP分区。</p>
-</blockquote>
-</li>
-<li><p>给swapfile一个执行权限</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod 600 /swapfile</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行以下命令，设置交换分区文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkswap /mnt/swap</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行以下命令，启用交换分区文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">swapon /mnt/swap</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu 永久修改主机名 hostname</title>
+      <link href="/posts/46419.html"/>
+      <url>/posts/46419.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-查看主机名"><a href="#1-查看主机名" class="headerlink" title="1. 查看主机名"></a>1. 查看主机名</h3><p>在终端输入 <code>hostname</code> 即可查看主机名</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wohu@wohu:/$ hostname</span><br><span class="line">wohu</span><br><span class="line">wohu@wohu:/$</span><br></pre></td></tr></table></figure><h3 id="2-修改主机名"><a href="#2-修改主机名" class="headerlink" title="2. 修改主机名"></a>2. 修改主机名</h3><h4 id="2-1-修改-etc-hostname"><a href="#2-1-修改-etc-hostname" class="headerlink" title="2.1 修改 &#x2F;etc&#x2F;hostname"></a>2.1 修改 &#x2F;etc&#x2F;hostname</h4><p><code>Ubuntu</code> 主机名存放在 <code>/etc/hostname</code> 文件中，修改主机名时，只需要编辑 <code>hostname</code>文件，在文件中输入新的主机名并保存该文件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wohu@wohu:/$ vi /etc/hostname </span><br></pre></td></tr></table></figure><p><strong>注意：在其它 <code>Linux</code> 发行版中，并非都存在 <code>/etc/hostname</code> 文件。如 <code>Fedora</code> 发行版将主机名存放在 <code>/etc/sysconfig/network</code> 文件中。修改主机名时应注意区分是哪种 <code>Linux</code> 发行版。</strong></p><h4 id="2-2-修改-etc-hosts"><a href="#2-2-修改-etc-hosts" class="headerlink" title="2.2 修改 &#x2F;etc&#x2F;hosts"></a>2.2 修改 &#x2F;etc&#x2F;hosts</h4><p><code>/etc/hosts</code> 存放的是域名与 <code>ip</code> 的对应关系，虽然这一步不是必须选项，但建议在修改主机名之后同步修改该文件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wohu@wohu:/$ vi /etc/hosts</span><br></pre></td></tr></table></figure><h4 id="2-3-重启系统"><a href="#2-3-重启系统" class="headerlink" title="2.3 重启系统"></a>2.3 重启系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wohu@wohu:/$ reboot</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除低版本Node安装新版本node报错的解决方法</title>
-    <url>/posts/10979.html</url>
-    <content><![CDATA[<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Unpacking nodejs (20.5.1-deb-1nodesource1) ...</span><br><span class="line">dpkg: error processing archive /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.deb (--unpack):</span><br><span class="line"> trying to overwrite &#x27;/usr/include/node/common.gypi&#x27;, which is also in package libnode-dev 12.22.9~dfsg-1ubuntu3.1</span><br><span class="line">dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> /var/cache/apt/archives/nodejs_20.5.1-deb-1nodesource1_amd64.debE: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode-dev</span><br><span class="line"></span><br><span class="line">sudo dpkg --remove --force-remove-reinstreq libnode72:amd64</span><br></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从任务栏中删除 Windows Copilot 图标</title>
+      <link href="/posts/51963.html"/>
+      <url>/posts/51963.html</url>
+      
+        <content type="html"><![CDATA[<p>如果你对 Windows Copilot 感到满意，但又不想让任务栏显示该图标并占用空间，那么可以按照以下步骤将其从任务栏中移除：</p><ol><li><p>打开 Windows 设置，导航至 <strong>个性化</strong> &gt; <strong>任务栏(taskbar)</strong></p></li><li><p>找到任务栏项目下的 Copilot（预览）选项，点击旁边的切换按钮隐藏图标</p><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/image-20231106091026448.png" alt="image-20231106091026448"></p></li></ol><p>请注意，这只会隐藏任务栏上的 Copilot 图标，您仍然可以按 WIN+C 快捷键启动它。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>解决hxeo tages categores 页面空白的方法</title>
+      <link href="/posts/18430.html"/>
+      <url>/posts/18430.html</url>
+      
+        <content type="html"><![CDATA[<p>解决hexo categories和tags页面不显示解决办法<br>第一步 需要新建tags和categories页面<br>在终端powershell下，确保此时是在hexo目录下，命令行输入</p><p><code>hexo new page tags</code> &#x2F;&#x2F;新建tags页面<br>然后会在hexo下的source目录看到tags文件夹，在index.md里输入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-10 16:14:33</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;   #增加tags的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>然后再用同样的方法，新建一个<code>categories</code></p><p><code>hexo new page categories</code> &#x2F;&#x2F;新建categories页面<br>然后配置categories 文件夹下的index.md</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-10 16:15:43</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;    #增加categories的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h4 id="第二步-给自己的帖子新加配置-增加tags和categories"><a href="#第二步-给自己的帖子新加配置-增加tags和categories" class="headerlink" title="第二步 给自己的帖子新加配置,增加tags和categories"></a>第二步 给自己的帖子新加配置,增加tags和categories</h4><p>例如我自己的一篇博客</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo categories和tags页面不显示解决办法</span><br><span class="line">date: 2020-01-12 17:22:40</span><br><span class="line">tags: 前端</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客中tags与categories用法</title>
+      <link href="/posts/30600.html"/>
+      <url>/posts/30600.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="tags与categories"><a href="#tags与categories" class="headerlink" title="tags与categories"></a>tags与categories</h3><p>在hexo中使用tags与categories往往需要使用多标签和多分类,这里记录一下它们的用法。</p><h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>用法：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure><p>多标签写法，这2种都是一样的效果，用哪个都可以，建议使用列表[]式，直观清晰。</p><h3 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在PowerShell中使用VIM</title>
-    <url>/posts/28001.html</url>
-    <content><![CDATA[<h3 id="使用PowerShell安装vim"><a href="#使用PowerShell安装vim" class="headerlink" title="使用PowerShell安装vim"></a>使用PowerShell安装vim</h3><h4 id="下载Vim"><a href="#下载Vim" class="headerlink" title="下载Vim"></a>下载Vim</h4><p><a href="https://github.com/vim/vim-win32-installer/releases">https://github.com/vim/vim-win32-installer/releases</a></p>
-<blockquote>
-<p>下载后运行gvim.exe安装到你想安装的位置。</p>
-</blockquote>
-<h4 id="PowerShell识别Vim"><a href="#PowerShell识别Vim" class="headerlink" title="PowerShell识别Vim"></a>PowerShell识别Vim</h4><p>1、管理员打开PowerShell</p>
-<blockquote>
-<p>执行命令：Set-ExecutionPolicy RemoteSigned<br>按Y回车结束。</p>
-</blockquote>
-<p>2、使用new-item命令，创建一个PowerShell的配置文件Profile</p>
-<blockquote>
-<p>管理员PowerShell<br>new-item -path $profile -itemtype file -force</p>
-</blockquote>
-<p>3、绑定Vim</p>
-<blockquote>
-<p>编辑配置文件（$profile），添加vim相关的alias。</p>
-<p>配置文件地址 C:\Users\刘伟\Documents\WindowsPowerShell</p>
-</blockquote>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set-alias</span> vim <span class="string">&quot;C:\Program Files\Vim\vim90\vim.exe&quot;</span> <span class="comment"># 此处为vim的安装路径</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Profile</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$profile</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Vimrc</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$HOME</span>\_vimrc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>添加完以上内容后，保存，重启PowerShell。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Active Backup for Business 套件激活方法</title>
+      <link href="/posts/14792.html"/>
+      <url>/posts/14792.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Active-Backup-for-Business-套件激活方法"><a href="#Active-Backup-for-Business-套件激活方法" class="headerlink" title="Active Backup for Business 套件激活方法"></a>Active Backup for Business 套件激活方法</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>黑群晖在不登录的情况下无法激活<code>Active backup for Business</code> 等套件，需要使用<strong>火狐浏览器</strong>进行浏览器激活</p><h2 id="修改步骤"><a href="#修改步骤" class="headerlink" title="修改步骤"></a>修改步骤</h2><p>需要修改文中的<code>ip地址</code>为自己群辉的登录地址，<code>serial_number</code>为自己的SN号</p><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310221517381.png" alt="image-20231022151743344"></p><p><strong>ABB for Active backup for Business：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.API.Auth&amp;version=3&amp;method=login&amp;account=admin&amp;passwd=password&amp;format=cookie</span><br><span class="line"></span><br><span class="line">http://10.10.10.10:5000/webapi/auth.cgi?api=SYNO.ActiveBackup.Activation&amp;method=set&amp;version=1&amp;activated=true&amp;serial_number=179GPDN224200</span><br><span class="line"></span><br><span class="line"># 查看激活状态</span><br><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackup.Activation&amp;method=get&amp;version=1</span><br></pre></td></tr></table></figure><p><strong>ABB for Microsoft 365：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupOffice365&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure><p><strong>ABB for Google Workspace：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://10.10.10.10:5000/webapi/entry.cgi?api=SYNO.ActiveBackupGSuite&amp;method=set_activation&amp;version=1&amp;serial_number=179GPDN224200</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>解决方案</category>
+          
+          <category> 黑群晖 </category>
+          
       </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查看运行的VPS运行什么操作系统</title>
-    <url>/posts/55.html</url>
-    <content><![CDATA[<h1 id="查看系统架构信息"><a href="#查看系统架构信息" class="headerlink" title="查看系统架构信息"></a>查看系统架构信息</h1><p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230950367.png"></p>
-<h1 id="查看系统是-ubuntu-还是-CentOS"><a href="#查看系统是-ubuntu-还是-CentOS" class="headerlink" title="查看系统是 ubuntu 还是 CentOS"></a>查看系统是 ubuntu 还是 CentOS</h1><p>cat &#x2F;etc&#x2F;redhat-release</p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230952633.png"></p>
-<p>cat &#x2F;etc&#x2F;issue</p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230953627.png"></p>
-<p>以上显示系统为<code>CentOS</code></p>
-<p><img src="https://liuweiokay.oss-cn-beijing.aliyuncs.com/202310230955983.png"></p>
-<p>以上显示系统为<code>Ubuntu</code></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> synology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在PowerShell中使用VIM</title>
+      <link href="/posts/28001.html"/>
+      <url>/posts/28001.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="使用PowerShell安装vim"><a href="#使用PowerShell安装vim" class="headerlink" title="使用PowerShell安装vim"></a>使用PowerShell安装vim</h3><h4 id="下载Vim"><a href="#下载Vim" class="headerlink" title="下载Vim"></a>下载Vim</h4><p><a href="https://github.com/vim/vim-win32-installer/releases">https://github.com/vim/vim-win32-installer/releases</a></p><blockquote><p>下载后运行gvim.exe安装到你想安装的位置。</p></blockquote><h4 id="PowerShell识别Vim"><a href="#PowerShell识别Vim" class="headerlink" title="PowerShell识别Vim"></a>PowerShell识别Vim</h4><p>1、管理员打开PowerShell</p><blockquote><p>执行命令：Set-ExecutionPolicy RemoteSigned<br>按Y回车结束。</p></blockquote><p>2、使用new-item命令，创建一个PowerShell的配置文件Profile</p><blockquote><p>管理员PowerShell<br>new-item -path $profile -itemtype file -force</p></blockquote><p>3、绑定Vim</p><blockquote><p>编辑配置文件（$profile），添加vim相关的alias。</p><p>配置文件地址 C:\Users\刘伟\Documents\WindowsPowerShell</p></blockquote><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set-alias</span> vim <span class="string">&quot;C:\Program Files\Vim\vim90\vim.exe&quot;</span> <span class="comment"># 此处为vim的安装路径</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Profile</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$profile</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">Function</span> <span class="title">Edit-Vimrc</span></span></span><br><span class="line">&#123;</span><br><span class="line">    vim <span class="variable">$HOME</span>\_vimrc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>添加完以上内容后，保存，重启PowerShell。</p>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> 解决方案 </category>
+          
       </categories>
-      <tags>
-        <tag>centos</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于SSH指令方式洗白</title>
-    <url>/posts/50194.html</url>
-    <content><![CDATA[<h2 id="一、洗白准备"><a href="#一、洗白准备" class="headerlink" title="一、洗白准备"></a>一、洗白准备</h2><ol>
-<li>在群辉→<code>控制面板</code>-&gt;终端机和SNMP-&gt;终端机中 勾选“启动SSH”功能，并点击应用；</li>
-<li>下载安装Putty，下载链接：<code>https://www.putty.org/</code>，也可从本文开头的链接中下载。打开软件Host Name输入你群辉的IP（不要带”:5000”）,Port如果没有修改，默认就是22.然后点击open。</li>
-<li>第一次打开会弹出一个窗口点击accecpt即可，随后在出现的窗口”login as”中输入你群辉的用户名，接下来会出现”password：”中输入你的密码，这里是看不到输入结果的，输入完按回车即可。</li>
-<li>输入指令，切换为root身份（linux输入密码是看不到，因此这里直接输入密码后按回车即可）</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
-
-<p>将引导挂载在自建的挂载目录中：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p /tmp/boot &amp;&amp; cd /dev</span><br></pre></td></tr></table></figure>
-
-<p>将引导第一分区挂载到建立的boot目录中</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mount -t vfat synoboot1 /tmp/boot/ &amp;&amp;  cd /tmp/boot/boot/grub</span><br></pre></td></tr></table></figure>
-
-<p>修改grub.cfg文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi grub.cfg</span><br></pre></td></tr></table></figure>
-
-<p>时，按’i’会进入编辑模式，将对应的sn和mac修改为你洗白码对应的sn和mac即可；<br>修改完后，按’esc’键退出编辑模式；</p>
-<h2 id="二、重启生效"><a href="#二、重启生效" class="headerlink" title="二、重启生效"></a>二、重启生效</h2>]]></content>
+      
+      
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PowerShell“因为在此系统上禁止运行脚本解决办法”</title>
+      <link href="/posts/6143.html"/>
+      <url>/posts/6143.html</url>
+      
+        <content type="html"><![CDATA[<p>最近升级了windows11，然后在系统上安装一些常用工具，遇到了如下的问题。</p><blockquote><p>nrm : 无法加载文件 C:\Users\11190\AppData\Roaming\npm\nrm.ps1，因为在此系统上禁止运行脚本。</p></blockquote><p>核心是power shell的安全策略，将 nrm 命令视为了不安全脚本，不允许执行。只需要放开权限就行。</p><p>我们通过管理员权限运行power shell，然后输入命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure><p>选择“是”，就OK了。</p><p>恢复默认执行以下命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy Default</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>黑群晖</category>
+          
+          <category> 解决方案 </category>
+          
       </categories>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>群辉旧版本SPK下载-SynlogyDrive</title>
-    <url>/posts/3366.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol>
-<li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li>
-<li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li>
-</ol>
-<h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure>
-
-<p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> PowerShell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑群晖开启root权限并设置root密码</title>
+      <link href="/posts/13295.html"/>
+      <url>/posts/13295.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p>DSM版本: DSM 6.2.3-25423</p><h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="一、打开设备SSH访问"><a href="#一、打开设备SSH访问" class="headerlink" title="一、打开设备SSH访问"></a>一、打开设备SSH访问</h3><p><code>控制面板</code> &gt; <code>终端机和SNMP</code> &gt; <code>启动SSH功能</code></p><h3 id="二、利用SSH软件连接到设备"><a href="#二、利用SSH软件连接到设备" class="headerlink" title="二、利用SSH软件连接到设备"></a>二、利用SSH软件连接到设备</h3><h3 id="三、设置root用户账号以及密码"><a href="#三、设置root用户账号以及密码" class="headerlink" title="三、设置root用户账号以及密码"></a>三、设置root用户账号以及密码</h3><ol><li>通过输入 `sudo -i`，然后输入当前用户密码, 进入 root用户</li><li>输入如下命令可以修改root 用户的密码,123456为root用户密码</li></ol><p><code>synouser --setpw root 123456</code>    </p><h3 id="四、DSM版本大于6-2，还需要设置"><a href="#四、DSM版本大于6-2，还需要设置" class="headerlink" title="四、DSM版本大于6.2，还需要设置"></a>四、DSM版本大于6.2，还需要设置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><p>找到这一行<br><code>#PermitRootLogin prohibit-password</code><br>并修改为<br><code>PermitRootLogin yes</code><br>按<code>i</code>键，进入编辑模式；按<code>Esc</code>键退出编辑模式；然后输入<code>:wq</code>保存退出；输入<code>:q!</code>放弃保存。</p>]]></content>
+      
+      
       <categories>
-        <category>黑群晖</category>
+          
+          <category> 黑群晖 </category>
+          
       </categories>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 22.04 系统关闭图形界面的方法</title>
-    <url>/posts/34716.html</url>
-    <content><![CDATA[<h2 id="关闭图形界面"><a href="#关闭图形界面" class="headerlink" title="关闭图形界面"></a>关闭图形界面</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>重启机器<code>reboot</code></p>
-<h2 id="重新启用图形界面的方法"><a href="#重新启用图形界面的方法" class="headerlink" title="重新启用图形界面的方法"></a>重新启用图形界面的方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl set-default graphical.target</span><br></pre></td></tr></table></figure>
-
-<p>重启机器<code>reboot</code></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> synology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于SSH指令方式洗白</title>
+      <link href="/posts/50194.html"/>
+      <url>/posts/50194.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、洗白准备"><a href="#一、洗白准备" class="headerlink" title="一、洗白准备"></a>一、洗白准备</h2><ol><li>在群辉→<code>控制面板</code>-&gt;终端机和SNMP-&gt;终端机中 勾选“启动SSH”功能，并点击应用；</li><li>下载安装Putty，下载链接：<code>https://www.putty.org/</code>，也可从本文开头的链接中下载。打开软件Host Name输入你群辉的IP（不要带”:5000”）,Port如果没有修改，默认就是22.然后点击open。</li><li>第一次打开会弹出一个窗口点击accecpt即可，随后在出现的窗口”login as”中输入你群辉的用户名，接下来会出现”password：”中输入你的密码，这里是看不到输入结果的，输入完按回车即可。</li><li>输入指令，切换为root身份（linux输入密码是看不到，因此这里直接输入密码后按回车即可）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure><p>将引导挂载在自建的挂载目录中：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /tmp/boot &amp;&amp; cd /dev</span><br></pre></td></tr></table></figure><p>将引导第一分区挂载到建立的boot目录中</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t vfat synoboot1 /tmp/boot/ &amp;&amp;  cd /tmp/boot/boot/grub</span><br></pre></td></tr></table></figure><p>修改grub.cfg文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi grub.cfg</span><br></pre></td></tr></table></figure><p>时，按’i’会进入编辑模式，将对应的sn和mac修改为你洗白码对应的sn和mac即可；<br>修改完后，按’esc’键退出编辑模式；</p><h2 id="二、重启生效"><a href="#二、重启生效" class="headerlink" title="二、重启生效"></a>二、重启生效</h2>]]></content>
+      
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> 黑群晖 </category>
+          
       </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决hxeo tages categores 页面空白的方法</title>
-    <url>/posts/18430.html</url>
-    <content><![CDATA[<p>解决hexo categories和tags页面不显示解决办法<br>第一步 需要新建tags和categories页面<br>在终端powershell下，确保此时是在hexo目录下，命令行输入</p>
-<p><code>hexo new page tags</code> &#x2F;&#x2F;新建tags页面<br>然后会在hexo下的source目录看到tags文件夹，在index.md里输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-10 16:14:33</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;   #增加tags的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>然后再用同样的方法，新建一个<code>categories</code></p>
-<p><code>hexo new page categories</code> &#x2F;&#x2F;新建categories页面<br>然后配置categories 文件夹下的index.md</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-10 16:15:43</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;    #增加categories的布局</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="第二步-给自己的帖子新加配置-增加tags和categories"><a href="#第二步-给自己的帖子新加配置-增加tags和categories" class="headerlink" title="第二步 给自己的帖子新加配置,增加tags和categories"></a>第二步 给自己的帖子新加配置,增加tags和categories</h4><p>例如我自己的一篇博客</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo categories和tags页面不显示解决办法</span><br><span class="line">date: 2020-01-12 17:22:40</span><br><span class="line">tags: 前端</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>黑群晖开启root权限并设置root密码</title>
-    <url>/posts/13295.html</url>
-    <content><![CDATA[<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p>DSM版本: DSM 6.2.3-25423</p>
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="一、打开设备SSH访问"><a href="#一、打开设备SSH访问" class="headerlink" title="一、打开设备SSH访问"></a>一、打开设备SSH访问</h3><p><code>控制面板</code> &gt; <code>终端机和SNMP</code> &gt; <code>启动SSH功能</code></p>
-<h3 id="二、利用SSH软件连接到设备"><a href="#二、利用SSH软件连接到设备" class="headerlink" title="二、利用SSH软件连接到设备"></a>二、利用SSH软件连接到设备</h3><h3 id="三、设置root用户账号以及密码"><a href="#三、设置root用户账号以及密码" class="headerlink" title="三、设置root用户账号以及密码"></a>三、设置root用户账号以及密码</h3><ol>
-<li>通过输入 `sudo -i`，然后输入当前用户密码, 进入 root用户</li>
-<li>输入如下命令可以修改root 用户的密码,123456为root用户密码</li>
-</ol>
-<p><code>synouser --setpw root 123456</code>    </p>
-<h3 id="四、DSM版本大于6-2，还需要设置"><a href="#四、DSM版本大于6-2，还需要设置" class="headerlink" title="四、DSM版本大于6.2，还需要设置"></a>四、DSM版本大于6.2，还需要设置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<p>找到这一行<br><code>#PermitRootLogin prohibit-password</code><br>并修改为<br><code>PermitRootLogin yes</code><br>按<code>i</code>键，进入编辑模式；按<code>Esc</code>键退出编辑模式；然后输入<code>:wq</code>保存退出；输入<code>:q!</code>放弃保存。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> synology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>群辉旧版本SPK下载-SynlogyDrive</title>
+      <link href="/posts/3366.html"/>
+      <url>/posts/3366.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>群晖在更新到DSM7之后对旧版本的Drive进行了移除，更新完drive之后offic套件就安装不了了，在官网的旧版本软件里也找不到下载文件</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="一、在官网日志中找到你要下载软件的版本号"><a href="#一、在官网日志中找到你要下载软件的版本号" class="headerlink" title="一、在官网日志中找到你要下载软件的版本号"></a>一、在官网日志中找到你要下载软件的版本号</h3><ol><li>群晖918+旧版本软件下载地址 `<a href="https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\%60">https://www.synology.cn/zh-cn/support/download/DS918+?version=6.2#packages\`</a></li><li>点击发行说明<br>  找到你需要的版本号，我的黑群晖版本是6.2.3只支持v2.0，最高只支持到2.0.4-1112</li></ol><h3 id="二、下载你需要的旧版本spk"><a href="#二、下载你需要的旧版本spk" class="headerlink" title="二、下载你需要的旧版本spk"></a>二、下载你需要的旧版本spk</h3><p>返回到上一步<br>右键复制下载链接</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/3.0.3-12689/SynologyDrive-x86_64-3.0.3-12689.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure><p>这样下载的是最新版本的，我们需要下载旧版本就需要替换里面的一些参数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cndl.synology.cn/download/Package/spk/SynologyDrive/2.0.4-1112/SynologyDrive-x86_64-2.0.4-1112.spk?model=DS918%2B&amp;bays=4&amp;dsm_version=6.2.4&amp;build_number=25556</span><br></pre></td></tr></table></figure><p>对比一下两者的区别，我们将链接中的 <code>3.0.3-12689</code> 都替换成了 <code>2.0.4-1112</code>下载下来的SPK文件就可以在6.2.3里面安装了</p>]]></content>
+      
+      
       <categories>
-        <category>黑群晖</category>
+          
+          <category> 黑群晖 </category>
+          
       </categories>
-      <tags>
-        <tag>synology</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> synology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
